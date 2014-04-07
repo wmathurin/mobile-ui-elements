@@ -1,49 +1,49 @@
 {
-  "name": "polymer2",
-  "version": "0.0.0",
-  "dependencies": {
-    "modernizr": "~2.6.2",
-    "platform": "Polymer/platform#0.1.1",
-    "polymer": "Polymer/polymer#0.1.1",
-    "polymer-elements": "Polymer/polymer-elements#0.1.1",
-    "polymer-ui-elements":  "Polymer/polymer-ui-elements#0.1.1",
-    "jquery": "latest",
-    "underscore": "latest",
-    "backbone": "latest",
-    "mobilesdk-shared": "forcedotcom/SalesforceMobileSDK-Shared#master",
-    "ratchet": "latest"
-  },
-  "devDependencies": {},
-  "exportsOverride": {
-    "modernizr": {
-      ".": "modernizr*.js"
+    "name": "mobile-ui-elements",
+    "version": "0.0.0",
+    "dependencies": {
+        "modernizr": "~2.6.2",
+        "platform": "Polymer/platform#0.1.1",
+        "polymer": "Polymer/polymer#0.1.1",
+        "polymer-elements": "Polymer/polymer-elements#0.1.1",
+        "polymer-ui-elements":  "Polymer/polymer-ui-elements#0.1.1",
+        "jquery": "2.0.3",
+        "underscore": "1.5.2",
+        "backbone": "1.1.0",
+        "mobilesdk-shared": "wmathurin/SalesforceMobileSDK-Shared#unstable23",
+        "ratchet": "1.0.2",
     },
-    "jquery": {
-      ".": [
-        "jquery.js",
-        "jquery.min.js"
-      ]
-    },
-    "backbone": {
-      ".": "backbone*.js"
-    },
-    "underscore": {
-      ".": "underscore*.js"
-    },
-    "mobilesdk-shared": {
-      ".": [
-        "libs/*js",
-        "test/Mock*.js"
-      ]
-    },
-    "polymer": {
-      "Polymer/.": [
-        "polymer.js",
-        "polymer.html"
-      ]
-    },
-    "polymer-*": {
-      "Polymer/.": ["."]
+    "devDependencies": {},
+    "exportsOverride": {
+        "modernizr": {
+            ".": "modernizr*.js"
+        },
+        "jquery": {
+            ".": [
+                "jquery.js",
+                "jquery.min.js"
+            ]
+        },
+        "backbone": {
+            ".": "backbone*.js"
+        },
+        "underscore": {
+            ".": "underscore*.js"
+        },
+        "mobilesdk-shared": {
+            ".": [
+                "libs/*js",
+                "test/Mock*.js"
+            ]
+        },
+        "polymer": {
+            "Polymer/.": [
+                "polymer.js",
+                "polymer.html"
+            ]
+        },
+        "polymer-*": {
+            "Polymer/.": ["."]
+        }
     }
-  }
 }
