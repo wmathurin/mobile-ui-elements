@@ -10,7 +10,7 @@
         "jquery": "2.0.3",
         "underscore": "1.5.2",
         "backbone": "1.1.0",
-        "salesforcemobilesdk-shared": "wmathurin/SalesforceMobileSDK-Shared#unstable23",
+        "mobilesdk-shared": "wmathurin/SalesforceMobileSDK-Shared#unstable23",
         "ratchet": "1.0.2",
     },
     "devDependencies": {},
