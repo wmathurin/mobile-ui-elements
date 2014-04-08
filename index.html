@@ -19,6 +19,7 @@
         <polymer-element name="mobile-app">
             <template>
                 <force-ui-app id="force_app" multipage="true" accesstoken="{{accesstoken}}" instanceurl="{{instanceurl}}">
+                    <h1 class="title">Accounts</h1>
                     <force-ui-list id="force_ui_list" sobject="Account" class="page content" on-polymer-activate="{{showDetail}}"></force-ui-list>
                     <force-ui-detail flex id="force_ui_detail" sobject="Account" recordid="{{$.force_ui_list.selected}}" class="page content">
                         <force-sobject-relatedlists id="force_relatedlists" sobject="Account" recordid="{{$.force_ui_list.selected}}"></force-sobject-relatedlists>
