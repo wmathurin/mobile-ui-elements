@@ -6,10 +6,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     grunt.initConfig({
-        yeoman: {
-            dist: 'dist'
-        },
-        clean: ['<%= yeoman.dist %>/*'],
+        clean: ['dist/*'],
         bower: {
             install: {
                 options: {
@@ -20,31 +17,44 @@ module.exports = function (grunt) {
         },
         uglify: {
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.dist %>',
-                    src: '*.js',
-                    dest: '<%= yeoman.dist %>'
-                }]
+                options: {
+                    sourceMap: 'dist/mobile-ui-elements.min.js.map'
+                },
+                files: {
+                    'dist/mobile-ui-elements.min.js': ['dist/mobile-ui-elements.js']
+                }
             }
         },
         exec: {
-            vulcan: {
-              command: 'node tools/vulcanize/vulcanize --csp elements/mobile-ui-elements.html -o <%= yeoman.dist %>/mobile-ui-elements.html',
+            shim_styles: {
+              command: 'node node_modules/polymer-shim-styles/shim-styles.js dependencies/ratchet/css/ratchet.css dependencies/ratchet/css/ratchet.shim.css\n' +
+                        'node node_modules/polymer-shim-styles/shim-styles.js elements/css/styles.css elements/css/styles.shim.css\n' +
+                        'node node_modules/polymer-shim-styles/shim-styles.js elements/css/responsive.css elements/css/responsive.shim.css\n',
               stdout: true,
               stderr: true
             }
         },
+        vulcanize: {
+            default: {
+                options: {
+                    csp: true
+                },
+                files: {
+                  'dist/mobile-ui-elements.html': 'elements/mobile-ui-elements.html'
+                }
+            }
+        }
     });
 
     grunt.registerTask('build', [
         'clean',
-        'bower'
+        'bower',
+        'exec:shim_styles'
     ]);
 
     grunt.registerTask('dist', [
         'build',
-        'exec',
+        'vulcanize',
         'uglify:dist'
     ]);
 

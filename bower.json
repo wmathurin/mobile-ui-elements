@@ -19,10 +19,7 @@
             ".": "modernizr*.js"
         },
         "jquery": {
-            ".": [
-                "jquery.js",
-                "jquery.min.js"
-            ]
+            ".": ["dist/*"]
         },
         "backbone": {
             ".": "backbone*.js"
@@ -39,11 +36,18 @@
         "polymer": {
             "Polymer/.": [
                 "polymer.js",
-                "polymer.html"
+                "polymer.html",
+                "polymer-body.html"
             ]
         },
         "polymer-*": {
-            "Polymer/.": "polymer-*.*"
+            "Polymer/.": ["."]
+        },
+        "ratchet": {
+            ".": "dist/."
+        },
+        "web-animations-js": {
+            "Polymer/.": "web-animations.js"
         }
     }
 }

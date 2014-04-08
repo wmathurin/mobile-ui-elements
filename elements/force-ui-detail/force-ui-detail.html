@@ -9,6 +9,7 @@
 
     @extends force-sobject-layout
 -->
+<link rel="import" href="../../dependencies/Polymer/polymer/polymer.html">
 <link rel="import" href="../force-sobject/force-sobject.html">
 <link rel="import" href="../force-sobject-layout/force-sobject-layout.html">
 <polymer-element name="force-ui-detail" attributes="foredit fieldlist fieldlabels" extends="force-sobject-layout">
@@ -18,4 +19,15 @@
     <content select="*"></content>
   </template>
   <script src="force-ui-detail.js"></script>
+</polymer-element>
+
+<polymer-element name="force-html-output" attributes="value">
+  <script>
+    Polymer('force-html-output', {
+      value: null,
+      valueChanged: function() {
+        this.innerHTML = this.value;
+      }
+    })
+  </script>
 </polymer-element>
