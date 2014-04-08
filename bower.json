@@ -19,7 +19,10 @@
             ".": "modernizr*.js"
         },
         "jquery": {
-            ".": ["dist/*"]
+            ".": [
+                "jquery.js",
+                "jquery.min.js"
+            ]
         },
         "backbone": {
             ".": "backbone*.js"
